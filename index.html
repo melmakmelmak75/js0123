@@ -11,129 +11,30 @@
 
 
 <script>
-	// 'use strict' - strict mode. Apply ONLY as first line of script!
-
-	// data types: number [±Infinity, ±0, NaN -> 2^54-1], boolean [true, false], string "", ``, '🦄', undefined, null, symbol, bigInt, ??{}
-
-	// variables
-	// let, const, var [*obsolete]
-
-	let a = 'Hello'; // variable a initialized with value 'Hello' (string) 
-	let b = "World";
-	let c = `Lzk.djdlskfjdskl ${a}
-	sekdjeslfkjlkfj  ${b}
-			dfgdgfd`;
-
-	let d; // undefined
-	let e = true, f = false, g;
-	g = Symbol('name');
-	let z = Symbol('name');
-	// g != z
-
-	z = null; 
-	const h = 10;
-
-	// bigInt
-	let x = 123456789n;
-	let y = BigInt(h);
-	
-	// i = 22; // in strict mode : ReferenceError: i is not defined
-
-	// typeof x == 'bigint'
-
-	// h = 12; // Assignment to constant variable.
-	// let a = 11; //Identifier 'a' has already been declared
-	
-	
-	console.log(m); // variable without value
-	// console.log(n); // Cannot access 'n' before initialization
-
-	var m = 'Apple';
-	let n = 'Banana';
-
-	console.log(m);
-	console.log(n);
-
-
-	// alert(c);
-	// let v = confirm('Are you 18+?'); // false is Esc
-	// let r = prompt('Type A', 1); // null if Esc
-
-	//console.warn('Warning!');
-	// console.error('Error!!!');
-
-
-	// operators + - / * %  ++ -- 
-
-	let k = 4;
-	console.log(k);
-	k++; // k + 1
-	console.log(k);
-
-	console.log(++k);
-
-	k = k + 2;
-	console.log(k);
-
-	k += 2; // k = k + 2
-	console.log(k);
-
-	k--;
-	console.log(k);
-	console.log(--k);
-	k -= 3;
-	console.log(k);
-
-	// остаток от деления - %
-
-	console.log(5%2);
-
-	let w = 2;
-	w = w*w;
-	console.log(w);
-
-	w *= w;
-	console.log(w);
-
-	let o = Math.pow(4,2);
-	console.log(o);
-
-
-	// == нестрогое сравнение, === строгое сравнение (с типами), != (не равно), !== (не равно, учитывая тип), !
-	// > < >= <=  && (и) || (или)
-
-	let u = 6;
-	let q = 13;
-
-	if(u > q){
-		console.log('u > q');
-	}
-	else if(u < q){
-		console.log('u < q');
-	}
-	else{
-		console.log('u = q');
-	}
-
-	// тернарный оператор
-	let max = u >= q ? u : q; // let j = condition ? true : false
-	console.log(max);
-
-	let min = u <= q ? u : q; 
-
-	console.log(m>n);
-
-	// 'a' > 'A'
-	// 'Apple' < 'Banana'
-	// 'AA' < 'AAA'
+	// HW 
+	// 1
 
 	let day = +prompt('Type number 1 - 7');
+	let lang = 'ua'; // 'en'
+
+	let mo = lang == 'ua' ? 'Понеділок': 'Monday';
+	let tue = lang == 'ua' ? 'Вівторок': 'Tuesday';
+	/// ...
+
 	switch(day){
-		case 1: console.log('Monday');
+		// 1 sp
+		case 1: console.log(mo);
 				break;
-		case 2: console.log('Tue');
+		case 2: console.log(tue);
 				break;
-		case 3: console.log('Wed');
+
+		//2 sp
+		case 3: if(lang === 'ua'){
+					console.log('Середа');
+				}
+				else{
+					console.log('Wednesday');
+				}
 				break;
 		case 4: console.log('Thu');
 				break;
@@ -148,19 +49,72 @@
 		default: console.log('Not a day');
 	}
 
+	// 3 sp 
+	if(lang === 'ua'){
+		// switch-case for ua
+	}
+	else{
+		// switch-case for en
+	}
 
-	//  34 + '55' - true + 8 = 3462
-	// 34 + 8 - true + '55' = 4155
+	// 2
 
-	// приведение типов
+	let min = +prompt('Type num 0-59');
 
-	// сложение со строкой всегда приводит типы слагаемых к строке и конкатенирует ее
-	// вычитание всегда приводит к числу
-	// числом 0 всегда становятся false, undefined, null, '', ' '
+	if(min > 0 && min <= 15){
+		console.log('1st quarter');
+	}
+	else if(min > 15 && min <= 30){
+		console.log('2nd quarter');
+	}
+	else if(min > 30 && min <= 45){
+		console.log('3rd quarter');
+	}
+	else if(min > 45 && min <= 60){
+		console.log('4th quarter');
+	}
+	else{
+		console.error('Incorrect input');
+	}
 
+	// 3
 	
+	let a = +prompt('Type A');
+
+	if(a === 0){
+		console.log('Verno');
+	}
+	else{
+		console.log('Neverno');
+	}
 
 
+	// 4
+
+	if(a <= 0){
+		console.log('Verno');
+	}
+	else{
+		console.log('Neverno');
+	}
+
+	// 5
+	let test = true;
+
+	// if(test != true){
+	// 	console.log('Verno');
+	// }
+	// else{
+	// 	console.log('Neverno');
+	// }
+	// if(!test){ // !test - test == false
+	// 	console.log('Verno');
+	// }
+	// else{
+	// 	console.log('Neverno');
+	// }
+
+	console.log(test ? 'Verno' : 'Neverno');
 
 </script>
 
