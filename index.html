@@ -11,110 +11,222 @@
 
 
 <script>
-	// HW 
-	// 1
+	// приведение типов
 
-	let day = +prompt('Type number 1 - 7');
-	let lang = 'ua'; // 'en'
+	// 1) to string
 
-	let mo = lang == 'ua' ? 'Понеділок': 'Monday';
-	let tue = lang == 'ua' ? 'Вівторок': 'Tuesday';
-	/// ...
+	// something + string = string
+	// let a = 8; String(a);
 
-	switch(day){
-		// 1 sp
-		case 1: console.log(mo);
-				break;
-		case 2: console.log(tue);
-				break;
+	// 2) to Num
+	// math operations - / 
+	// let str = '52'; Number(str) // typeof num = number
+	// undefined -> NaN, null -> 0, true/false -> 1/0, '22' -> 22, 'Apple22' -> NaN
 
-		//2 sp
-		case 3: if(lang === 'ua'){
-					console.log('Середа');
-				}
-				else{
-					console.log('Wednesday');
-				}
-				break;
-		case 4: console.log('Thu');
-				break;
-		case 4.5: console.log('It`s Thursday tea o`clock');
-				break;
-		case 5: console.log('Fri');
-				break;
-		case 6: console.log('Sat');
-				break;
-		case 7: console.log('Sun');
-				break;
-		default: console.log('Not a day');
+	// 3) boolean
+	//let a = 10; Boolean(a) // true
+	// Boolean(0) // false
+	// Boolean('') // false
+	// Boolean('1234edfdflk') // true
+	// 0, null, undefined, NaN, '' - false , rest of all true
+
+
+	// let a = 46 - '34' + true + '12'; // '1312'
+
+	// if(3){
+	// 	a += '52';
+	// }
+	// else{
+	// 	a += 6;
+	// }
+
+	// console.log(a);
+
+
+	// loops
+
+	for(let i = 0; i < 5; i++){
+		// loop body
+		console.log(`i = ${i}`);
 	}
 
-	// 3 sp 
-	if(lang === 'ua'){
-		// switch-case for ua
-	}
-	else{
-		// switch-case for en
+	let j = 8;
+	while(j >= 4){
+		console.log(`j = ${j}`);
+		j--;
 	}
 
-	// 2
+	let k = 7;
+	do {
+		console.log(`k = ${k}`);
+	}
+	while(k < 6);
 
-	let min = +prompt('Type num 0-59');
 
-	if(min > 0 && min <= 15){
-		console.log('1st quarter');
-	}
-	else if(min > 15 && min <= 30){
-		console.log('2nd quarter');
-	}
-	else if(min > 30 && min <= 45){
-		console.log('3rd quarter');
-	}
-	else if(min > 45 && min <= 60){
-		console.log('4th quarter');
-	}
-	else{
-		console.error('Incorrect input');
-	}
+	// *
+	// **
+	// ***
 
-	// 3
+	// let str = '';
+	// for(let i = 0; i < 5; i++){
+	// 	str += '*';
+	// 	console.log(str);
+	// }
+
+
+	// let size = +prompt('Type number of lines');
+	// let median = Math.ceil(size/2); // size%2 == 0 ? size/2 : (size+1)/2
+
+	// for(let i = 1; i <= size; i++){ // наружный цикл работает с номерами строк от 1 до size
+	// 	let str = ''; // пустая строка создается на каждой итерации, в ней нет *
+	// 	if(i <= median){ // пока мы не достигли середины треугольника
+	// 		for(let j = 0; j < i; j++){ // в каждой строке создаем столько звезд, какой порядковый номер строки
+	// 			str += '*';
+	// 		}
+	// 	}
+	// 	else{ // если мы прошли середину, то количество звезд с каждой строкой должно уменьшаться
+	// 		// for(let k = i; k <= size; k++){ // и в каждой строке количество звезд равно разнице size - i
+	// 		// 	str += '*';
+	// 		// }
+	// 		for(let k = size; k >= i; k--){ // size - i = ***
+	// 			str += '*';
+	// 		}
+	// 	}
+	// 	console.log(str);
+	// }
+
+
+	// * HW***  сделать таким же способом ромб
+
+	// # # # # 
+	//  # # # #
+
+	let cells = 8;
 	
-	let a = +prompt('Type A');
-
-	if(a === 0){
-		console.log('Verno');
-	}
-	else{
-		console.log('Neverno');
-	}
-
-
-	// 4
-
-	if(a <= 0){
-		console.log('Verno');
-	}
-	else{
-		console.log('Neverno');
+	for(let i = 0; i < cells; i++){ //  наружный цикл создает строки **
+		let str = '';
+		for(let j = 0; j < cells; j++){ // внутренний цикл собирает символы внутри строки
+			if(i % 2 == 0 && j % 2 == 0 || i % 2 !== 0 && j % 2 !== 0){
+				// # четный символ четной строки или нечетный символ нечетной строки
+				str += '#';
+			}
+			else{ // ' ' - нечетный символ четной строки или четный символ нечетной строки
+				str += ' ';
+			}
+		}
+		console.log(str); // ** которые в конце каждой итерации выводит в консоль
 	}
 
-	// 5
-	let test = true;
+ // вывести в консоль числа от 1 до 50, но числа кратные 3 заменить на слово 'fizz', 
+ // кратные 5 заменить на слово 'buzz', кратные 3 и 5 заменить на 'fizzbuzz'
 
-	// if(test != true){
-	// 	console.log('Verno');
-	// }
-	// else{
-	// 	console.log('Neverno');
-	// }
-	// if(!test){ // !test - test == false
-	// 	console.log('Verno');
-	// }
-	// else{
-	// 	console.log('Neverno');
+	for(let i = 1; i <= 50; i++){
+		if(i % 3 == 0 && i % 5 == 0){
+			console.log('fizzbuzz');
+		}
+		else if(i%3 == 0){
+			console.log('fizz');
+		}
+		else if(i%5 == 0){
+			console.log('buzz');
+		}
+		else{
+			console.log(i);
+		}
+	}
+
+
+	// fibonacci
+	// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+	// show N fibonacci number
+
+	// let n = +prompt('Type num');
+
+	// let a = 0;
+	// let b = 1;
+	// let c;
+
+	// for(let i = 3; i <= n; i++){
+	// 	c = a + b;
+	// 	a = b;
+	// 	b = c;
 	// }
 
-	console.log(test ? 'Neverno' : 'Verno' );
+	// console.log(c);
+
+
+	// factorial m
+	// m! = m * m-1 ... * 1
+	// 5! = 1 * 2 * 3 * 4 * 5
+
+	// let m = +prompt('Type m (factorial)');
+	// // 5*4*3*2*1
+	// // let factorial = m;
+	// // while(m > 1){ // до тех пор, пока м больше 0
+	// // 	factorial *= m-1; // умножаем предыдущее произведение factorial на m-1
+	// // 	m--;
+	// // }
+	// // console.log(factorial);
+
+	// // 1*2*3*4*5
+	// let factorial = 1; 
+	// let i = 1;
+	// while(i < m){
+	// 	i++;
+	// 	factorial *= i;
+	// }
+	// console.log(factorial);
+
+
+	// 1*1 = 1
+	// 1*2 = 2
+	//...
+	// 9*9=81
+
+	// for(let i = 1; i < 10; i++){
+	// 	for(let j = 1; j < 10; j++){
+	// 		let str = `${i} * ${j} = ${i*j}`;
+	// 		console.log(str);
+	// 	}
+	// 	console.log(' ');
+	// }
+
+	// вывести все нечетные числа от 30 до 50
+
+	let num = 30;
+	while(num <= 50){
+		if(num % 2 !== 0){
+			console.log(num);
+		}
+		num++;
+	}
+
+	// найти сумму диапазона от a до b
+
+	// let a = +prompt('Type A');
+	// let start = a;
+	// let b = +prompt('Type B');
+	// let sum = 0; // если не присвоить 0, то undefined приведется к NaN и результат получится NaN
+
+	// while (a <= b){
+	// 	sum += a;
+	// 	a++;
+	// }
+
+	// console.log(`sum ${start} to ${b} = ${sum}`);
+
+	// найти среднее арифметическое от 1 до 10
+
+	let start = 12;
+	let end = 19;
+	let sr = 0;
+
+	for(let i = start; i <= end; i++){
+		sr += i;
+	}
+
+	sr = sr/(end - start + 1); // +1 потому что всегда количество слагаемых на 1 больше, чем end - start
+	console.log(sr);
 
 </script>
 
